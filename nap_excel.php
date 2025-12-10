@@ -4,6 +4,14 @@ require "db_connect.php";
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
+// ⚠️ XÓA TOÀN BỘ DỮ LIỆU TRONG DatPhienChay
+$sql1 = "DELETE FROM DatPhienChay";
+$stmt_delete_all_phien_chay_dat = sqlsrv_query($conn, $sql1);
+// ⚠️ XÓA TOÀN BỘ DỮ LIỆU TRONG HocVien
+$sql2 = "DELETE FROM HocVien";
+$stmt_delete_all_HV = sqlsrv_query($conn, $sql2);
+
+
 if (!isset($_FILES['excel_file']) || $_FILES['excel_file']['error'] !== 0) {
     die("Vui lòng chọn file Excel!");
 }
@@ -103,5 +111,5 @@ for ($i = 0; $i < $highestRow; $i++) {
     }
 }
 
-echo "✔ Đã import thành công toàn bộ học viên!";
+echo '<script>alert("✔ Đã import thành công toàn bộ học viên!");window.location.href = "index.php";</script>';
 ?>

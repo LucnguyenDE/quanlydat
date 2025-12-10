@@ -6,6 +6,9 @@
     body {
         font-family: Arial, sans-serif;
         padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     h2 {
         color: #0066cc;
@@ -20,32 +23,18 @@
 </style>
 </head>
 <body>
+ 
+<div class="form-box">
+    <h2>📥 Nạp excel tổng hợp DAT</h2>
+    <form action="nap_excel.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="excel_file" accept=".xlsx,.xls" required>
+        <br><br>
+        <button type="submit">Xác nhận</button>
+    </form>
+</div>
 <!-- Nút tải báo cáo Dat Phien -->
-<a href="tonghopdat_process.php" class="btn btn-success" style="margin: 10px;">
-    📥 Tải báo cáo tổng hợp DAT
-</a>
-<h1>IMPORT DỮ LIỆU DAT</h1>
-<a href="export_phien.php">
-    <button>Tải Excel Phiên Chạy DAT</button>
-</a>
-
-<div class="form-box">
-    <h2>📥 Nhập dữ liệu PHIÊN CHẠY</h2>
-    <form action="process.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="excel_file" accept=".xlsx,.xls" required>
-        <br><br>
-        <button type="submit">Nhập phiên chạy</button>
-    </form>
-</div>
-
-<div class="form-box">
-    <h2>📊 Nhập dữ liệu TỔNG DAT</h2>
-    <form action="process_tong.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="excel_file" accept=".xlsx,.xls" required>
-        <br><br>
-        <button type="submit">Nhập tổng DAT</button>
-    </form>
-</div>
-
+<a href="tai_file_word.php" class="btn btn-success" style="margin: 10px;">
+    📥 Tải file Word cho toàn bộ học viên 
+</a>   
 </body>
 </html>

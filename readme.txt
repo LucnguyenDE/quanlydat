@@ -29,3 +29,6 @@ CREATE TABLE DatPhienChay (
 
 Mở C:\xampp\php\php.ini
 extension=zip
+
+cd C:\xampp\htdocs\dashboard\chuyendoiexcel
+composer require phpoffice/phpword
